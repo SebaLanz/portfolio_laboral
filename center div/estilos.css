@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+.grid-container > *{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+/*Contenido Celular*/
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+        "header" 100px
+        "navbar" 50px
+        "main" auto
+        "sidebar" 100px
+        "footer" 100px;
+}
+.header{
+    grid-area: header;
+    background-color: aliceblue;
+}
+.navbar{
+    grid-area: navbar;
+    background-color: antiquewhite;
+}
+.main{
+    grid-area: main;
+    background-color: rgb(34, 107, 107);
+}
+.sidebar{
+    grid-area: sidebar;
+    background-color: aquamarine;
+}
+.footer{
+    grid-area: footer;
+    background-color: azure;
+}
+
+/*medias queries*/
+/*Tablet*/
+@media (min-width: 600px){
+    .grid-container{
+        grid-template: 
+        "header  header" 100px /*Alto*/
+        "navbar  navbar" 50px /*Alto*/
+        "sidebar main" auto /*Alto*/
+        "footer  footer" 100px /*Alto*/ /
+        200px    auto; /*Ancho de columnas*/       
+    }
+}
+/*PC*/
+@media (min-width: 900px){
+    .grid-container{
+        grid-template: 
+        "header  header header" 100px /*Alto*/
+        "navbar  main   sidebar" auto /*Alto*/
+        "footer  footer footer" 100px /*Alto*/ /
+        150px    auto   150px; /*Ancho de columnas*/    
+        gap: 0 0px; 
+    }
+    .header, .navbar, .main, .sidebar, .footer{
+        border-radius: 0px;
+        
+    }
+
+    /*Header*/
+    .header{
+        background-color: black;
+        color: #fff;
+        display: grid;
+        grid-template: 
+        "btnHeader1 . . . . btnHeader2 btnHeader3 btnHeader4 btnHeader5 btnHeader6";
+        align-items: center;
+        text-align: end;
+        
+    }
+    .header :first-child{
+        text-align: start;/*Inicio pegado a la izquierda*/
+        margin-left: 20px;
+    }
+    .header :last-child{ 
+        margin-right: 20px; /*Contactame al fin con margen a la derecha*/
+    }
+    .header a:hover{
+        font-size: 30px;
+        transition: 0.7s;
+    }
+    .header a{
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        transition: 0.7s;   
+    }
+
+    .btnHeader1{
+        grid-area: btnHeader1;   
+    }
+    .btnHeader2{
+        grid-area: btnHeader2;
+    }
+    .btnHeader3{
+        grid-area: btnHeader3;
+    }
+    .btnHeader4{
+        grid-area: btnHeader4;
+    }
+    .btnHeader5{
+        grid-area: btnHeader5;
+    }
+    .btnHeader6{
+        grid-area: btnHeader6;
+    }
+    /*Fin Header*/
+
+    /*Nabvar*/
+    .navbar,.sidebar{
+        background-color: #bfbfbf;
+    }
+    /*Fin nab - side*/
+
+    /*Inicio main*/
+    .main{
+        display: grid;
+        grid-template: 
+        "sobreMi"
+        "habilidades"
+        "trabajos"
+        "curriculum"
+        "contactame";
+    }
+    .main div{
+        border: 1px solid black;
+    }
+    .sobreMi{
+        grid-area: sobreMi;
+        display: grid;
+        grid-template:
+        "parrafoSM imagenSM" 500px / 50%;/*Alto 500 - ancho 50%*/
+        /* padding: 10px 10px; */
+        background-color: #020202;
+        padding: 5px;
+        gap: 5px;
+    }
+    .habilidades{
+        grid-area: habilidades;
+        width: 100%;
+        background-color: #020202;
+        display: grid;
+        grid-template: 
+        "imgLenguajes parrafoHabilidades" 400px / 50%;
+        padding: 5px;
+        gap: 5px;
+    }
+    .trabajos{
+        grid-area: trabajos;
+        background-color: #020202;
+    
+    }
+    .curriculum{
+        grid-area: curriculum;
+    }
+    .contactame{
+        grid-area: contactame;
+    }
+
+    /*Contenido dentro de los divs*/
+    .parrafoSM, .imagenSM{
+        border-radius: 10px;
+    }
+    .imagenSM{
+        background-image: url(./img/img.jpg);
+        background-position: center;
+        background-size:cover;
+    }
+    .parrafoSM{
+        background-color: #fff; 
+        padding-top: 25px;
+        display: block;
+    }
+    .parrafoSM h1,h3{
+        color: #542172;
+    }
+    .parrafoSM h1{
+        font-size: 50px;
+    }
+    .parrafoSM, h3{
+        font-size: 30px;
+        padding-bottom: 50px;
+    }
+    .parrafoSM, .parrafoHabilidades p{
+        /* padding-top: 50px; */
+        font-size: 20px;
+    }
+    /* Fin Sobre mí */
+    /* Habilidades */
+    .imgLenguajes, .parrafoHabilidades{
+        border-radius: 10px; 
+    }
+    .imgLenguajes{
+        background-image: url(./img/testimg2.png);
+        background-position: center;
+        background-size:cover;
+    }
+    .parrafoHabilidades{
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+    }
+    /* Fin habilidades */
+    /* Inicio Trabajos */
+
+    .card{
+        margin: 10px;
+        border: solid 1px black;
+        border-radius: 15px 15px 0 0 !important;
+    }
+    .imgCard1{
+        background-image: url(./img/php.jpg);
+        background-position: center;
+        background-size:cover;
+        height: 350px;
+        border-radius: 15px 15px 0 0;
+    }
+    .imgCard2{
+        background-image: url(./img/cc.jpg);
+        background-position: center;
+        background-size:cover;
+        height: 350px;
+        border-radius: 15px 15px 0 0;
+    }
+    .imgCard3{
+        background-image: url(./img/cc.jpg);
+        background-position: center;
+        background-size:cover;
+        height: 350px;
+        border-radius: 15px 15px 0 0;
+    }
+
+
+
+
+
+
+    /*footer*/
+    .footer{
+        background-color: black;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .footer i{
+        font-size: 20px;
+        color: #fff;
+        margin-left: 15px;
+    }
+    .footer p{
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+
+}

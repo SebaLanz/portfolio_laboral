@@ -124,8 +124,16 @@ body{
 
 
     /*Nabvar*/
-    .navbar,.sidebar{
-        background-color: #bfbfbf;
+    .navbar{
+        /* background: rgb(72,72,157);
+        background: linear-gradient(90deg, rgb(100, 99, 99) 55%, #959595 100%);  */
+        background-color: #959595;
+        border-right: none;
+    }
+    .sidebar{
+        /* background: rgb(72,72,157);
+        background: linear-gradient(90deg, #959595 55% , rgb(100, 99, 99) 100%);  */
+        background-color: #1B1B1B;
     }
     .navbar img{
             position: -webkit-sticky; /* Safari */
@@ -134,8 +142,35 @@ body{
             background-color: green;
             border: 2px solid #4CAF50;
     }
+    .nav_img{
+        width: 75px;
+        height: 75px;
+        background-position: center;
+        background-size:cover;
+        display: block;
+        margin-left: 25px;
+    }
+    .nav_01{
+        background-image: url(./iconos/i_html.png);
+        
+    }
+    .nav_02{
+        background-image: url(./iconos/i_css.png);
+    }
+    .nav_03{
+        background-image: url(./iconos/i_js.png);
+    }
+    .nav_04{
+        background-image: url(./iconos/i_boots.png);
+        border-radius: 15px;
+    }
+    .nav_05{
+        background-image: url(./iconos/i_node.png);
+    }
+    .nav_06{
+        background-image: url(./iconos/i_csharp.jpg);
+    }
     /*Fin nab - side*/
-
     /*Inicio main*/
     .main{
         display: grid;
@@ -146,11 +181,7 @@ body{
         "curriculum"
         "contactame";
     }
-    .main div{
-        
-        
 
-    }
     .sobreMi{
         grid-area: sobreMi;
         display: grid;
@@ -199,7 +230,7 @@ body{
         display: block;
     }
     .parrafoSM h1,h3{
-        color: #542172;
+        color: #ab4493;
     }
     .parrafoSM h1{
         font-size: 50px;
@@ -207,6 +238,8 @@ body{
     .parrafoSM, h3{
         font-size: 30px;
         padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
     .parrafoSM, .parrafoHabilidades p{
         /* padding-top: 50px; */

@@ -169,6 +169,7 @@ body{
     }
     .curriculum{
         grid-area: curriculum;
+        height: 250px;
     }
     .contactame{
         grid-area: contactame;

@@ -36,7 +36,7 @@ body{
 }
 .main{
     grid-area: main;
-    background-color: rgb(34, 107, 107);
+    background: linear-gradient(to right, #959595 0%, #1B1B1B 100%);
 }
 .sidebar{
     grid-area: sidebar;
@@ -71,7 +71,6 @@ body{
     }
     .header, .navbar, .main, .sidebar, .footer{
         border-radius: 0px;
-        
     }
 
     /*Header*/
@@ -123,9 +122,17 @@ body{
     }
     /*Fin Header*/
 
+
     /*Nabvar*/
     .navbar,.sidebar{
         background-color: #bfbfbf;
+    }
+    .navbar img{
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            background-color: green;
+            border: 2px solid #4CAF50;
     }
     /*Fin nab - side*/
 
@@ -140,7 +147,9 @@ body{
         "contactame";
     }
     .main div{
-        border: 1px solid black;
+        
+        
+
     }
     .sobreMi{
         grid-area: sobreMi;
@@ -149,22 +158,19 @@ body{
         "parrafoSM imagenSM" 500px / 50%;/*Alto 500 - ancho 50%*/
         /* padding: 10px 10px; */
         background-color: #020202;
-        padding: 5px;
-        gap: 5px;
+        border-radius: 5px;
     }
     .habilidades{
         grid-area: habilidades;
         width: 100%;
-        background-color: #020202;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,151,181,1) 35%, rgba(0,121,255,1) 100%); 
         display: grid;
         grid-template: 
-        "imgLenguajes parrafoHabilidades" 400px / 50%;
-        padding: 5px;
-        gap: 5px;
+        "imgLenguajes parrafoHabilidades" 500px / 50%;
     }
     .trabajos{
         grid-area: trabajos;
-        background-color: #020202;
     
     }
     .curriculum{
@@ -176,8 +182,11 @@ body{
     }
 
     /*Contenido dentro de los divs*/
-    .parrafoSM, .imagenSM{
-        border-radius: 10px;
+    .parrafoSM{
+        border-radius: 5px 0 0 0;
+    }
+    .imagenSM{
+        border-radius: 0px 5px 0 0;
     }
     .imagenSM{
         background-image: url(./img/img.jpg);
@@ -205,53 +214,159 @@ body{
     }
     /* Fin Sobre mí */
     /* Habilidades */
-    .imgLenguajes, .parrafoHabilidades{
-        border-radius: 10px; 
-    }
+
     .imgLenguajes{
-        background-image: url(./img/testimg2.png);
-        background-position: center;
-        background-size:cover;
+        position: relative;
+        
     }
-    .parrafoHabilidades{
+    .imgTest{
+   
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+        
+    }
+    .parrafoHabilidades{  
+        position: relative;
+
+    }
+    .parrafoHabilidades .parrafoDiv{        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         background-color: #fff;
+        width: 90%;
+        height: 90%;
+        border-radius: 5px;
+        padding: 0px 15px 15px 15px;
         display: flex;
+        justify-content: center;
         align-items: center;
     }
+
     /* Fin habilidades */
     /* Inicio Trabajos */
 
     .card{
-        margin: 10px;
-        border: solid 1px black;
-        border-radius: 15px 15px 0 0 !important;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
     .imgCard1{
         background-image: url(./img/php.jpg);
         background-position: center;
         background-size:cover;
-        height: 350px;
-        border-radius: 15px 15px 0 0;
+        height: 350px;    
     }
     .imgCard2{
         background-image: url(./img/cc.jpg);
         background-position: center;
         background-size:cover;
-        height: 350px;
-        border-radius: 15px 15px 0 0;
+        height: 350px;     
     }
     .imgCard3{
         background-image: url(./img/cc.jpg);
         background-position: center;
         background-size:cover;
-        height: 350px;
-        border-radius: 15px 15px 0 0;
+        height: 350px;    
+    }
+    .card1,.card2{
+        margin-right: 5px;
     }
 
+    /*Formulario*/
 
-
-
-
+    .contactame{  
+        width: 460px; 
+        height: auto;
+        margin: 80px auto;
+        border-radius: 10px;      
+        background-color: #fbfbfb; 
+        padding: 15px 0 15px 0;
+      }    
+      input{
+        background-color: #fbfbfb; 
+        width: 408px; 
+        height: 40px; 
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 1px; 
+        border-color: #ab4493; 
+        margin-top: 10px;  
+        padding-left: 10px;
+        margin-bottom: 10px; 
+      }    
+      textarea{
+        background-color: #fbfbfb; 
+        width: 405px; 
+        height: 150px; 
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 1px; 
+        border-color: #ab4493; 
+        margin-top: 10px;  
+        padding-left: 10px;
+        margin-bottom: 20px; 
+        padding-top: 15px; 
+      }     
+      label{
+        display: block; 
+        float: center;  
+      } 
+      button{
+        height: 45px; 
+        margin-bottom: 20px; 
+        text-transform: uppercase;
+        background-color: #ab4493; 
+        border-color: #ab4493; 
+        border-style: solid; 
+        border-radius: 10px;  
+        width: 420px;   
+        cursor: pointer;
+      }     
+      button p{
+        color: #fff; 
+      }      
+      span{
+        color: #ab4493; 
+      }     
+      .aviso{
+        font-size: 13px;  
+        color: #0e0e0e;  
+      }    
+      .formulario h1{
+        font-size: 39px;  
+        text-align: letf; 
+        padding-bottom: 20px; 
+        color: #ab4493;
+      }    
+      .formulario h3{
+        font-size: 16px; 
+        padding-bottom: 30px;
+        color: #0e0e0e;   
+      }
+    
+      .formulario p{
+        font-size: 14px; 
+        color: #0e0e0e; 
+        padding-top: 10px;
+      }  
+      ::-webkit-input-placeholder {
+       color: #a8a8a8;
+      }
+          
+      ::-webkit-textarea-placeholder {
+       color: #a8a8a8;
+      }     
+      .formulario input:focus{
+        outline:0;
+        border: 1px solid #97d848;
+      }   
+      .formulario textarea:focus{
+        outline:0;
+        border: 1px solid #97d848;
+      }
 
     /*footer*/
     .footer{
@@ -272,4 +387,7 @@ body{
         margin-top: 10px;
     }
 
+
+
+    
 }

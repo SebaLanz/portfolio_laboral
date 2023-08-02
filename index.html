@@ -14,17 +14,19 @@
 <body class="grid-container">
     <!-- Inicio Header -->
     <header class="header">
-       <a href="./index.html" class="btnHeader1">Inicio</a>
-       <a href="" class="btnHeader2">Sobre mí</a>
-       <a href="" class="btnHeader3">Habilidades</a>
-       <a href="" class="btnHeader4">Trabajos</a>
-       <a href="" class="btnHeader5">Curriculum</a>
-       <a href="" class="btnHeader6">Contactame</a>
+        <nav class="navItems">
+            <!--<a href="./index.html" class="btnHeader1">Inicio</a>-->
+            <a href="#sobreMi" class="btnHeader3">Sobre mí</a>
+            <a href="#habilidades" class="btnHeader4">Habilidades</a>
+            <a href="#parrafoDiv" class="btnHeader5">Proyección</a>
+            <a href="#trabajos" class="btnHeader6">Trabajos</a>
+        </nav>
     </header>
+    
     <!-- Fin Header -->
     <!-- Inicio Nav - Side -->
     <nav class="navbar">
-        <div class="nav_img nav_01"></div>
+       <div class="nav_img nav_01"></div>
         <div class="nav_img nav_02"></div>
         <div class="nav_img nav_03"></div>
         <div class="nav_img nav_04"></div>
@@ -35,92 +37,86 @@
     <!-- Fin Nav - Side -->
     <!-- Inicio Main -->
     <article class="main">
-        <div class="sobreMi">
+        <div id="sobreMi" class="sobreMi">
             <div class="parrafoSM">
                 <h1>Sebastián Lanzetti</h1>
                 <h3>Desarrollador FullStack Jr.</h3>
-                <p>Analista Programador en Desarrollo de Aplicaciones, graduado en 2022, en el instituto San Agustín. <br>
-                    Actualmente estoy realizando un curso de Programación FullStack y SQL en CoderHouse para mejorar mi capacidad en el desarrollo de aplicaciones web. </p>
+                <p><b>Analista Programador en Desarrollo de Aplicaciones.</b><br>
+                    Graduado en el año 2022 en el instituto San Agustín.<br>
+                    Actualmente me encuentro realizando curso de Programación FullStack en CoderHouse y 
+                    Data analytics en la Academia Numen. <br>
+                    Inglés particular, en el cual voy a realizar examen en Anglia para la certificación Step 4.</p>
             </div>
             <div class="imagenSM"></div>
         </div>
     <!--Fin 1er fila-->
-        <div class="habilidades">
-            <div class="imgLenguajes">
-                <img class="imgTest" src="./img/test3.png" alt="">
-            </div>
-            <div class="parrafoHabilidades">
-                <div class="parrafoDiv">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam at earum cumque quibusdam minima   ipsa reiciendis numquam esse ab, maxime excepturi natus possimus similique cum eveniet culpa iusto.   Error tenetur voluptate quae soluta molestias sequi nam esse, corporis incidunt est!
-                    </p>
-                </div>
-                
-            </div>
+    <div class="contenedor">
+        <div id="habilidades" class="imgLenguajes">
+            <img class="imgTest" src="./img/lenguajes.png" alt="">
         </div>
+        <div id="parrafoDiv" class="parrafoDiv">
+            <p>
+                Durante mis estudios, he tenido la oportunidad de familiarizarme con diversos lenguajes y herramientas.
+                 Entre los lenguajes de programación que más he utilizado se encuentran Php, Java, C# y JavaScript. He 
+                 desarrollado aplicaciones web y aplicaciones de escritorio. Además, JavaScript me ha permitido crear 
+                 experiencias interactivas en el lado del cliente para aplicaciones web modernas. También he trabajado 
+                 con sistemas de control de versiones como Git para mantener un registro ordenado y colaborativo de mis
+                  proyectos. Estoy en búsqueda de desafíos, para así, seguir perfeccionando mis habilidades para convertirme en un desarrollador competente y creativo. 
+            </p>
+        </div>
+    </div>
+    
     <!-- Trabajos cartas -->
-        <div class="trabajos">
+        <div id="trabajos" class="trabajos">
             <div class="card-group">
                 <div class="card card1">
                   <div class="imgCard1"></div>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
+                    <h5 class="card-title">Seguro de vehículos</h5>
+                    <p class="card-text">Proyecto dividido en backend y frontend. <br>
+                                        Con este proyecto de seguros, cada usuario puede tener asegurado uno o varios vehículos, diferentes formas de pago, permisos y más!!! </p>
+                    <p class="card-text"><small class="text-muted"><a target="_blank" href="https://github.com/SebaLanz?tab=repositories&q=seguro&type=&language=&sort=">Link Github!</a></small></p>
+                    </div>
                 </div>
                 <div class="card card2">
                   <div class="imgCard2"></div>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">Claves aleatorias</h5>
+                    <p class="card-text">Este proyecto se puede realizar claves aleatorias. <br> 
+                        Puede elegir un largo de clave y el tipo de clave, como alfanumérica o con todos los caracteres.</p>
+                    <p class="card-text"><small class="text-muted"><a target="_blank" href="https://sebalanz.github.io/javaScriptFinal/">Link online!</a></small></p>
+                    
                   </div>
                 </div>
                 <div class="card card3">
                   <div class="imgCard3"></div>
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 class="card-title">Proyecto MySQL</h5>
+                    <p class="card-text">Proyecto SQL relacionado a ventas y alquileres de vehículos e inmuebles.
+                        Se utilizaron los comandos DDL, DML, DCL y TCL. Además, se crearon vistas, store procedures, triggers y funciones.
+                        </p>
+                        <p class="card-text"><small class="text-muted"><a target="_blank" href="https://github.com/SebaLanz/SQL---CoderHouse">Link Github!</a></small></p>
+
                   </div>
                 </div>
+                <div class="card card4">
+                    <div class="imgCard4"></div>
+                    <div class="card-body">
+                      <h5 class="card-title">Recursos humanos ABM</h5>
+                      <p class="card-text">Proyecto SQL relacionado a ventas y alquileres de vehículos e inmuebles.
+                          Se utilizaron los comandos DDL, DML, DCL y TCL. Además, se crearon vistas, store procedures, triggers y funciones.
+                          </p>
+                          <p class="card-text"><small class="text-muted"><a target="_blank" href="https://github.com/SebaLanz/SQL---CoderHouse">Link Github!</a></small></p>
+    
+                    </div>
+                  </div>
               </div>
+            </div>
         </div>
-        <!--
-        <div class="curriculum">
-            
-        </div>-->
-        <div class="contactame">
-            <div class="formulario">      
-                <h1>Contáctame!</h1>        
-                    <form action="#" method="post">                              
-                        <p>
-                            <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
-                        </p>
-                    
-                        <p>
-                            <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
-                        </p>
-                    
-                        <p>
-                            <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
-                        </p>                       
-                        <p>
-                            <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe un asunto">
-                        </p>    
-                    
-                        <p>                    
-                            <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
-                        </p>                    
-                        
-                          <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>                           
-                    </form>
-              </div>  
-        </div>
+       
     </article>
     <!-- Fin Main -->
-    <footer class="footer">
+    <footer  class="footer">
         <a href="https://www.linkedin.com/in/sebastian-lanzetti/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
         <a href="https://github.com/SebaLanz" target="_blank"><i class="fa-brands fa-github"></i></a>
         <p>Todos los derechos reservados -  © 2023</p>

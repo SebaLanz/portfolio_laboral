@@ -36,7 +36,7 @@ body{
 }
 .main{
     grid-area: main;
-    background: linear-gradient(to right, #959595 0%, #1B1B1B 100%);
+    /*background: linear-gradient(to right, #646464 0%, #1B1B1B 100%);*/
 }
 .sidebar{
     grid-area: sidebar;
@@ -74,65 +74,45 @@ body{
     }
 
     /*Header*/
-    .header{
+    .header {
         background-color: black;
         color: #fff;
-        display: grid;
-        grid-template: 
-        "btnHeader1 . . . . btnHeader2 btnHeader3 btnHeader4 btnHeader5 btnHeader6";
-        align-items: center;
-        text-align: end;
+        display: flex; /* Utilizamos flexbox */
+        justify-content: flex-end; /* Alineamos los elementos a la derecha */
+        align-items: center; /* Centramos verticalmente los elementos */
         
     }
-    .header :first-child{
-        text-align: start;/*Inicio pegado a la izquierda*/
-        margin-left: 20px;
+    
+    .navItems {
+        display: flex;
     }
-    .header :last-child{ 
-        margin-right: 20px; /*Contactame al fin con margen a la derecha*/
-    }
-    .header a:hover{
-        font-size: 30px;
-        transition: 0.7s;
-    }
-    .header a{
+    
+    .navItems a {
         color: #fff;
         font-size: 20px;
         text-decoration: none;
-        transition: 0.7s;   
+        transition: 0.7s;
+        margin-left: 20px; /* Espaciado entre enlaces */
+        height: 100%; /* Para asegurar que los enlaces ocupen toda la altura del header */
+        display: flex; /* Para centrar verticalmente el texto */
+        align-items: center; /* Centrar verticalmente el texto */
     }
-
-    .btnHeader1{
-        grid-area: btnHeader1;   
+    
+    .navItems a:hover {
+        color: gray;
+        transition: 0.7s;
     }
-    .btnHeader2{
-        grid-area: btnHeader2;
-    }
-    .btnHeader3{
-        grid-area: btnHeader3;
-    }
-    .btnHeader4{
-        grid-area: btnHeader4;
-    }
-    .btnHeader5{
-        grid-area: btnHeader5;
-    }
-    .btnHeader6{
-        grid-area: btnHeader6;
-    }
+    
+    
     /*Fin Header*/
 
 
     /*Nabvar*/
     .navbar{
-        /* background: rgb(72,72,157);
-        background: linear-gradient(90deg, rgb(100, 99, 99) 55%, #959595 100%);  */
-        background-color: #959595;
+        background-color: #1B1B1B;
         border-right: none;
     }
     .sidebar{
-        /* background: rgb(72,72,157);
-        background: linear-gradient(90deg, #959595 55% , rgb(100, 99, 99) 100%);  */
         background-color: #1B1B1B;
     }
     .navbar img{
@@ -242,43 +222,40 @@ body{
         padding-right: 50px;
     }
     .parrafoSM, .parrafoHabilidades p{
-        /* padding-top: 50px; */
         font-size: 20px;
+    }
+    .parrafoSM p{
+        text-align: left;
     }
     /* Fin Sobre mí */
     /* Habilidades */
 
-    .imgLenguajes{
-        position: relative;
-        
-    }
-    .imgTest{
-   
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%)
-        
-    }
-    .parrafoHabilidades{  
-        position: relative;
-
-    }
-    .parrafoHabilidades .parrafoDiv{        
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #fff;
-        width: 90%;
-        height: 90%;
-        border-radius: 5px;
-        padding: 0px 15px 15px 15px;
+    .contenedor {
         display: flex;
-        justify-content: center;
         align-items: center;
+        padding: 10px;
     }
-
+    
+    .imgLenguajes {
+        flex: 1;
+        margin-right: 10px;
+    }
+    
+    .imgTest {
+        max-width: 100%;
+    }
+    
+    .parrafoDiv {
+        flex: 1;
+        text-align: left;
+    }
+    
+    .parrafoDiv p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    
+    
     /* Fin habilidades */
     /* Inicio Trabajos */
 
@@ -290,116 +267,30 @@ body{
         background-image: url(./img/php.jpg);
         background-position: center;
         background-size:cover;
-        height: 350px;    
+        height: 300px;    
     }
     .imgCard2{
-        background-image: url(./img/cc.jpg);
+        background-image: url(./img/htmlcssjs.PNG);
         background-position: center;
         background-size:cover;
-        height: 350px;     
+        height: 300px;     
     }
     .imgCard3{
-        background-image: url(./img/cc.jpg);
+        background-image: url(./img/mysql.PNG);
         background-position: center;
         background-size:cover;
-        height: 350px;    
+        height: 300px;    
+    }
+    .imgCard4{
+        background-image: url(./img/imgc.PNG);
+        background-position: center;
+        background-size:cover;
+        height: 300px;    
     }
     .card1,.card2{
         margin-right: 5px;
     }
 
-    /*Formulario*/
-
-    .contactame{  
-        width: 460px; 
-        height: auto;
-        margin: 80px auto;
-        border-radius: 10px;      
-        background-color: #fbfbfb; 
-        padding: 15px 0 15px 0;
-      }    
-      input{
-        background-color: #fbfbfb; 
-        width: 408px; 
-        height: 40px; 
-        border-radius: 5px;  
-        border-style: solid; 
-        border-width: 1px; 
-        border-color: #ab4493; 
-        margin-top: 10px;  
-        padding-left: 10px;
-        margin-bottom: 10px; 
-      }    
-      textarea{
-        background-color: #fbfbfb; 
-        width: 405px; 
-        height: 150px; 
-        border-radius: 5px;  
-        border-style: solid; 
-        border-width: 1px; 
-        border-color: #ab4493; 
-        margin-top: 10px;  
-        padding-left: 10px;
-        margin-bottom: 20px; 
-        padding-top: 15px; 
-      }     
-      label{
-        display: block; 
-        float: center;  
-      } 
-      button{
-        height: 45px; 
-        margin-bottom: 20px; 
-        text-transform: uppercase;
-        background-color: #ab4493; 
-        border-color: #ab4493; 
-        border-style: solid; 
-        border-radius: 10px;  
-        width: 420px;   
-        cursor: pointer;
-      }     
-      button p{
-        color: #fff; 
-      }      
-      span{
-        color: #ab4493; 
-      }     
-      .aviso{
-        font-size: 13px;  
-        color: #0e0e0e;  
-      }    
-      .formulario h1{
-        font-size: 39px;  
-        text-align: letf; 
-        padding-bottom: 20px; 
-        color: #ab4493;
-      }    
-      .formulario h3{
-        font-size: 16px; 
-        padding-bottom: 30px;
-        color: #0e0e0e;   
-      }
-    
-      .formulario p{
-        font-size: 14px; 
-        color: #0e0e0e; 
-        padding-top: 10px;
-      }  
-      ::-webkit-input-placeholder {
-       color: #a8a8a8;
-      }
-          
-      ::-webkit-textarea-placeholder {
-       color: #a8a8a8;
-      }     
-      .formulario input:focus{
-        outline:0;
-        border: 1px solid #97d848;
-      }   
-      .formulario textarea:focus{
-        outline:0;
-        border: 1px solid #97d848;
-      }
 
     /*footer*/
     .footer{

@@ -1,0 +1,998 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+.grid-container > *{
+    box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    padding: 10px;
+    text-align: center;
+}
+    .grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+        "header" 100px
+        "navbar" 50px
+        "main" auto
+        "sidebar" 100px
+        "footer" 100px;
+}
+.header{
+    grid-area: header;
+}
+.navbar{
+    grid-area: navbar;
+}
+.main{
+    grid-area: main;
+}
+.sidebar{
+    grid-area: sidebar;
+}
+.footer{
+    grid-area: footer;
+}
+
+/*medias queries*/
+/*Tablet*/
+@media (min-width: 600px){
+    .grid-container{
+        grid-template: 
+        "header  header" 100px /*Alto*/
+        "navbar  navbar" 50px /*Alto*/
+        "main" auto /*Alto*/
+        "footer  footer" 100px /*Alto*/ /
+        200px    auto; /*Ancho de columnas*/       
+    }
+}
+/*PC*/
+
+@media (min-width: 600px) and (max-width: 1211px){
+    .grid-container{
+        grid-template: 
+        "header  header header" 100px /*Alto*/
+        "main  main   main" auto /*Alto*/
+        "footer  footer footer" 100px /*Alto*/ /
+        150px    auto   150px; /*Ancho de columnas*/    
+        gap: 0 0px; 
+    }
+    .header, .main, .footer{
+        border-radius: 0px;
+    }
+
+    /*Header*/
+    .header {
+        background-color: black;
+        color: #fff;
+        display: flex; /* Utilizamos flexbox */
+        justify-content: flex-end; /* Alineamos los elementos a la derecha */
+        align-items: center; /* Centramos verticalmente los elementos */
+    }
+    
+    .navItems {
+        display: flex;
+    }
+    
+    .navItems a {
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        transition: 0.7s;
+        margin-left: 20px; /* Espaciado entre enlaces */
+        height: 100%; /* Para asegurar que los enlaces ocupen toda la altura del header */
+        display: flex; /* Para centrar verticalmente el texto */
+        align-items: center; /* Centrar verticalmente el texto */
+    }
+    
+    .navItems a:hover {
+        color: gray;
+        transition: 0.7s;
+    }   
+
+    /*Fin Header*/
+    
+    /*Fin nab - side*/
+    /*Inicio main*/
+    .main{
+        display: grid;
+        grid-template: 
+        "sobreMi"
+        "habilidades"
+        "trabajos"
+        "curriculum"
+        "contactame";
+    }
+
+    .sobreMi{
+        grid-area: sobreMi;
+        display: grid;
+        grid-template:
+        "parrafoSM" 350px;
+        background-color: #020202;
+        border-radius: 5px;
+        margin-bottom: 50px;
+    }
+    .contactame{
+        grid-area: contactame;
+    }
+
+    .parrafoSM{
+        background-color: #fff; 
+        padding-top: 25px;
+        display: block;
+    }
+    .parrafoSM h1,h3{
+        color: #ab4493;
+    }
+    .parrafoSM h1{
+        font-size: 50px;
+    }
+    .parrafoSM, h3{
+        font-size: 30px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .parrafoSM, .parrafoHabilidades p{
+        font-size: 20px;
+    }
+    .parrafoSM p{
+        text-align: left;
+    }
+    /* Fin Sobre mí */
+    /* Habilidades */
+
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        height: 100vh; /* Ajusta aquí la altura deseada para ocupar todo el viewport */
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+    .imgLenguajes{
+        display: none;
+    }
+
+
+    .parrafoDiv {
+        text-align: justify; /* Justifica el texto */
+        padding: 25px;
+    }
+    
+    /* Fin habilidades */
+    /* Inicio Trabajos */
+/* Inicio Trabajos */
+/* Trabajos */
+.trabajos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-template-rows: 1fr 1fr; /* Dos filas */
+    grid-gap: 5px;
+}
+
+.card {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.imgCard1 {
+    background-image: url(../img/php.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+}
+
+.imgCard2 {
+    background-image: url(../img/htmlcssjs.PNG);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+}
+
+.imgCard3 {
+    background-image: url(../img/mysql.PNG);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+}
+
+.imgCard4 {
+    background-image: url(../img/imgc.PNG);
+    background-position: center;
+    background-size: cover;
+    height: 250px;
+    grid-column: span 3; /* Ocupar todo el ancho de la fila */
+}
+
+/* Resto de estilos ... */
+
+/* Fin Trabajos */
+
+
+    /*Inicio contacto*/
+    .contactame{  
+        width: 350px; 
+        height: auto;
+        margin: 50px auto;
+        border-radius: 10px;      
+        background-color: #fbfbfb; 
+        padding: 15px 0 15px 0;
+    }    
+    input{
+        background-color: #fbfbfb; 
+        width: 408px; 
+        height: 40px; 
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 1px; 
+        border-color: #ab4493; 
+        margin-top: 10px;  
+        padding-left: 10px;
+        margin-bottom: 10px; 
+    }    
+    textarea{
+        background-color: #fbfbfb; 
+        width: 405px; 
+        height: 150px; 
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 1px; 
+        border-color: #ab4493; 
+        margin-top: 10px;  
+        padding-left: 10px;
+        margin-bottom: 20px; 
+        padding-top: 15px; 
+    }     
+    label{
+        display: block; 
+        float: center;  
+    } 
+    button{
+        height: 45px; 
+        margin-bottom: 20px; 
+        text-transform: uppercase;
+        background-color: #ab4493; 
+        border-color: #ab4493; 
+        border-style: solid; 
+        border-radius: 10px;  
+        width: 420px;   
+        cursor: pointer;
+    }     
+    button p{
+        color: #fff; 
+    }      
+    span{
+        color: #ab4493; 
+    }     
+    .aviso{
+        font-size: 13px;  
+        color: #0e0e0e;  
+    }    
+    .formulario h1{
+        font-size: 39px;  
+        text-align: letf; 
+        padding-bottom: 20px; 
+        color: #ab4493;
+    }    
+    .formulario h3{
+        font-size: 16px; 
+        padding-bottom: 30px;
+        color: #0e0e0e;   
+    }
+    
+    .formulario p{
+        font-size: 14px; 
+        color: #0e0e0e; 
+        padding-top: 10px;
+    }  
+    ::-webkit-input-placeholder {
+    color: #a8a8a8;
+    }
+        
+    ::-webkit-textarea-placeholder {
+    color: #a8a8a8;
+    }     
+    .formulario input:focus{
+        outline:0;
+        border: 1px solid #97d848;
+    }   
+    .formulario textarea:focus{
+        outline:0;
+        border: 1px solid #97d848;
+    }
+    /*Fin contacto*/
+
+    /*footer*/
+    .footer{
+        background-color: black;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .footer i{
+        font-size: 20px;
+        color: #fff;
+        margin-left: 15px;
+    }
+    .footer p{
+        margin-left: 15px;
+        margin-top: 10px;
+    } 
+}
+/*-*/
+@media (min-width: 1212px) and (max-width: 1499px){
+    .grid-container{
+        grid-template: 
+        "header  header header" 100px /*Alto*/
+        "navbar  main   sidebar" auto /*Alto*/
+        "footer  footer footer" 100px /*Alto*/ /
+        150px    auto   150px; /*Ancho de columnas*/    
+        gap: 0 0px; 
+    }
+    .header, .navbar, .main, .sidebar, .footer{
+        border-radius: 0px;
+    }
+
+    /*Header*/
+    .header {
+        background-color: black;
+        color: #fff;
+        display: flex; /* Utilizamos flexbox */
+        justify-content: flex-end; /* Alineamos los elementos a la derecha */
+        align-items: center; /* Centramos verticalmente los elementos */
+        
+    }
+    
+    .navItems {
+        display: flex;
+    }
+    
+    .navItems a {
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        transition: 0.7s;
+        margin-left: 20px; /* Espaciado entre enlaces */
+        height: 100%; /* Para asegurar que los enlaces ocupen toda la altura del header */
+        display: flex; /* Para centrar verticalmente el texto */
+        align-items: center; /* Centrar verticalmente el texto */
+    }
+    
+    .navItems a:hover {
+        color: gray;
+        transition: 0.7s;
+    }   
+    /*Fin Header*/
+    /*Nabvar*/
+    .navbar{
+        background-color: #1B1B1B;
+        border-right: none;
+    }
+    .sidebar{
+        background-color: #1B1B1B;
+    }
+    .navbar img{
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+    }
+    .nav_img{
+        width: 50px;
+        height: 50px;
+        background-position: center;
+        background-size:cover;
+        display: block;
+        align-items: center;
+        margin-left: 30%;
+    }
+    .nav_01{
+        background-image: url(../iconos/i_html.png);
+        
+    }
+    .nav_02{
+        background-image: url(../iconos/i_css.png);
+    }
+    .nav_03{
+        background-image: url(../iconos/i_js.png);
+    }
+    .nav_04{
+        background-image: url(../iconos/i_boots.png);
+        border-radius: 15px;
+    }
+    .nav_05{
+        background-image: url(../iconos/i_node.png);
+    }
+    .nav_06{
+        background-image: url(../iconos/i_csharp.jpg);
+    }
+    /*Fin nab - side*/
+    /*Inicio main*/
+    .main{
+        display: grid;
+        grid-template: 
+        "sobreMi"
+        "habilidades"
+        "trabajos"
+        "curriculum"
+        "contactame";
+    }
+
+    .sobreMi{
+        grid-area: sobreMi;
+        display: grid;
+        grid-template:
+        "parrafoSM imagenSM" 500px / 55% 45%;
+        background-color: #020202;
+        border-radius: 5px;
+        margin-bottom: 50px;
+    }
+    .contactame{
+        grid-area: contactame;
+    }
+    .parrafoSM{
+        border-radius: 5px 0 0 0;
+    }
+    .imagenSM{
+        border-radius: 0px 5px 0 0;
+    }
+    .imagenSM{
+        background-image: url(../img/img.jpg);
+        background-position: center;
+        background-size:cover;
+    }
+    .parrafoSM{
+        background-color: #fff; 
+        padding-top: 25px;
+        display: block;
+    }
+    .parrafoSM h1,h3{
+        color: #ab4493;
+    }
+    .parrafoSM h1{
+        font-size: 50px;
+    }
+    .parrafoSM, h3{
+        font-size: 30px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .parrafoSM, .parrafoHabilidades p{
+        font-size: 20px;
+    }
+    .parrafoSM p{
+        text-align: left;
+    }
+    /* Fin Sobre mí */
+    /* Habilidades */
+
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        height: 100vh; /* Ajusta aquí la altura deseada para ocupar todo el viewport */
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+    .imgLenguajes{
+        height: 300px;
+        
+    }
+    .imgTest {
+        max-width: 100%;
+        height: 300px;
+    }
+
+    .parrafoDiv {
+        text-align: justify; /* Justifica el texto */
+        padding: 25px;
+    }
+    
+    /* Fin habilidades */
+    /* Inicio Trabajos */
+
+    .card{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .imgCard1{
+        background-image: url(../img/php.jpg);
+        background-position: center;
+        background-size:cover;
+        height: 250px;    
+    }
+    .imgCard2{
+        background-image: url(../img/htmlcssjs.PNG);
+        background-position: center;
+        background-size:cover;
+        height: 250px;     
+    }
+    .imgCard3{
+        background-image: url(../img/mysql.PNG);
+        background-position: center;
+        background-size:cover;
+        height: 250px;    
+    }
+    .imgCard4{
+        background-image: url(../img/imgc.PNG);
+        background-position: center;
+        background-size:cover;
+        height: 250px;    
+    }
+    .card1,.card2{
+        margin-right: 5px;
+    }
+    /*Inicio contacto*/
+    .contactame{  
+        width: 350px; 
+        height: auto;
+        margin: 50px auto;
+        border-radius: 10px;      
+        background-color: #fbfbfb; 
+        padding: 15px 0 15px 0;
+    }    
+    input{
+        background-color: #fbfbfb; 
+        width: 408px; 
+        height: 40px; 
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 1px; 
+        border-color: #ab4493; 
+        margin-top: 10px;  
+        padding-left: 10px;
+        margin-bottom: 10px; 
+    }    
+    textarea{
+        background-color: #fbfbfb; 
+        width: 405px; 
+        height: 150px; 
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 1px; 
+        border-color: #ab4493; 
+        margin-top: 10px;  
+        padding-left: 10px;
+        margin-bottom: 20px; 
+        padding-top: 15px; 
+    }     
+    label{
+        display: block; 
+        float: center;  
+    } 
+    button{
+        height: 45px; 
+        margin-bottom: 20px; 
+        text-transform: uppercase;
+        background-color: #ab4493; 
+        border-color: #ab4493; 
+        border-style: solid; 
+        border-radius: 10px;  
+        width: 420px;   
+        cursor: pointer;
+    }     
+    button p{
+        color: #fff; 
+    }      
+    span{
+        color: #ab4493; 
+    }     
+    .aviso{
+        font-size: 13px;  
+        color: #0e0e0e;  
+    }    
+    .formulario h1{
+        font-size: 39px;  
+        text-align: letf; 
+        padding-bottom: 20px; 
+        color: #ab4493;
+    }    
+    .formulario h3{
+        font-size: 16px; 
+        padding-bottom: 30px;
+        color: #0e0e0e;   
+    }
+    
+    .formulario p{
+        font-size: 14px; 
+        color: #0e0e0e; 
+        padding-top: 10px;
+    }  
+    ::-webkit-input-placeholder {
+    color: #a8a8a8;
+    }
+        
+    ::-webkit-textarea-placeholder {
+    color: #a8a8a8;
+    }     
+    .formulario input:focus{
+        outline:0;
+        border: 1px solid #97d848;
+    }   
+    .formulario textarea:focus{
+        outline:0;
+        border: 1px solid #97d848;
+    }
+    /*Fin contacto*/
+
+    /*footer*/
+    .footer{
+        background-color: black;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .footer i{
+        font-size: 20px;
+        color: #fff;
+        margin-left: 15px;
+    }
+    .footer p{
+        margin-left: 15px;
+        margin-top: 10px;
+    } 
+}
+/*-*/
+@media (min-width: 1500px){
+    .grid-container{
+        grid-template: 
+        "header  header header" 100px /*Alto*/
+        "navbar  main   sidebar" auto /*Alto*/
+        "footer  footer footer" 100px /*Alto*/ /
+        150px    auto   150px; /*Ancho de columnas*/    
+        gap: 0 0px; 
+    }
+    .header, .navbar, .main, .sidebar, .footer{
+        border-radius: 0px;
+    }
+
+    /*Header*/
+    .header {
+        background-color: black;
+        color: #fff;
+        display: flex; /* Utilizamos flexbox */
+        justify-content: flex-end; /* Alineamos los elementos a la derecha */
+        align-items: center; /* Centramos verticalmente los elementos */
+        
+    }
+    
+    .navItems {
+        display: flex;
+    }
+    
+    .navItems a {
+        color: #fff;
+        font-size: 20px;
+        text-decoration: none;
+        transition: 0.7s;
+        margin-left: 20px; /* Espaciado entre enlaces */
+        height: 100%; /* Para asegurar que los enlaces ocupen toda la altura del header */
+        display: flex; /* Para centrar verticalmente el texto */
+        align-items: center; /* Centrar verticalmente el texto */
+    }
+    
+    .navItems a:hover {
+        color: gray;
+        transition: 0.7s;
+    }
+    
+    
+    /*Fin Header*/
+
+
+    /*Nabvar*/
+    .navbar{
+        background-color: #1B1B1B;
+        border-right: none;
+    }
+    .sidebar{
+        background-color: #1B1B1B;
+    }
+    .navbar img{
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            background-color: green;
+            border: 2px solid #4CAF50;
+    }
+    .nav_img{
+        width: 75px;
+        height: 75px;
+        background-position: center;
+        background-size:cover;
+        display: block;
+        margin-left: 25px;
+    }
+    .nav_01{
+        background-image: url(../iconos/i_html.png);
+        
+    }
+    .nav_02{
+        background-image: url(../iconos/i_css.png);
+    }
+    .nav_03{
+        background-image: url(../iconos/i_js.png);
+    }
+    .nav_04{
+        background-image: url(../iconos/i_boots.png);
+        border-radius: 15px;
+    }
+    .nav_05{
+        background-image: url(../iconos/i_node.png);
+    }
+    .nav_06{
+        background-image: url(../iconos/i_csharp.jpg);
+    }
+    /*Fin nab - side*/
+    /*Inicio main*/
+    .main{
+        display: grid;
+        grid-template: 
+        "sobreMi"
+        "habilidades"
+        "trabajos"
+        "curriculum"
+        "contactame";
+    }
+
+    .sobreMi{
+        grid-area: sobreMi;
+        display: grid;
+        grid-template:
+        "parrafoSM imagenSM" 500px / 50%;/*Alto 500 - ancho 50%*/
+        /* padding: 10px 10px; */
+        background-color: #020202;
+        border-radius: 5px;
+    }
+    .habilidades{
+        grid-area: habilidades;
+        width: 100%;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(115,151,181,1) 35%, rgba(0,121,255,1) 100%); 
+        display: grid;
+        grid-template: 
+        "imgLenguajes parrafoHabilidades" 500px / 50%;
+    }
+    .trabajos{
+        grid-area: trabajos;
+    
+    }
+    .curriculum{
+        grid-area: curriculum;
+        height: 250px;
+    }
+    .contactame{
+        grid-area: contactame;
+    }
+
+    /*Contenido dentro de los divs*/
+    .parrafoSM{
+        border-radius: 5px 0 0 0;
+    }
+    .imagenSM{
+        border-radius: 0px 5px 0 0;
+    }
+    .imagenSM{
+        background-image: url(../img/img.jpg);
+        background-position: center;
+        background-size:cover;
+    }
+    .parrafoSM{
+        background-color: #fff; 
+        padding-top: 25px;
+        display: block;
+    }
+    .parrafoSM h1,h3{
+        color: #ab4493;
+    }
+    .parrafoSM h1{
+        font-size: 50px;
+    }
+    .parrafoSM, h3{
+        font-size: 30px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .parrafoSM, .parrafoHabilidades p{
+        font-size: 20px;
+    }
+    .parrafoSM p{
+        text-align: left;
+    }
+    /* Fin Sobre mí */
+    /* Habilidades */
+
+    .contenedor {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+    
+    .imgLenguajes {
+        flex: 1;
+        margin-right: 10px;
+    }
+    
+    .imgTest {
+        max-width: 100%;
+    }
+    
+    .parrafoDiv {
+        flex: 1;
+        text-align: left;
+    }
+    
+    .parrafoDiv p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    
+    
+    /* Fin habilidades */
+    /* Inicio Trabajos */
+
+    .card{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .imgCard1{
+        background-image: url(../img/php.jpg);
+        background-position: center;
+        background-size:cover;
+        height: 300px;    
+    }
+    .imgCard2{
+        background-image: url(../img/htmlcssjs.PNG);
+        background-position: center;
+        background-size:cover;
+        height: 300px;     
+    }
+    .imgCard3{
+        background-image: url(../img/mysql.PNG);
+        background-position: center;
+        background-size:cover;
+        height: 300px;    
+    }
+    .imgCard4{
+        background-image: url(../img/imgc.PNG);
+        background-position: center;
+        background-size:cover;
+        height: 300px;    
+    }
+    .card1,.card2{
+        margin-right: 5px;
+    }
+    /*Inicio contacto*/
+    .contactame{  
+        width: 460px; 
+        height: auto;
+        margin: 80px auto;
+        border-radius: 10px;      
+        background-color: #fbfbfb; 
+        padding: 15px 0 15px 0;
+    }    
+    input{
+        background-color: #fbfbfb; 
+        width: 408px; 
+        height: 40px; 
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 1px; 
+        border-color: #ab4493; 
+        margin-top: 10px;  
+        padding-left: 10px;
+        margin-bottom: 10px; 
+    }    
+    textarea{
+        background-color: #fbfbfb; 
+        width: 405px; 
+        height: 150px; 
+        border-radius: 5px;  
+        border-style: solid; 
+        border-width: 1px; 
+        border-color: #ab4493; 
+        margin-top: 10px;  
+        padding-left: 10px;
+        margin-bottom: 20px; 
+        padding-top: 15px; 
+    }     
+    label{
+        display: block; 
+        float: center;  
+    } 
+    button{
+        height: 45px; 
+        margin-bottom: 20px; 
+        text-transform: uppercase;
+        background-color: #ab4493; 
+        border-color: #ab4493; 
+        border-style: solid; 
+        border-radius: 10px;  
+        width: 420px;   
+        cursor: pointer;
+    }     
+    button p{
+        color: #fff; 
+    }      
+    span{
+        color: #ab4493; 
+    }     
+    .aviso{
+        font-size: 13px;  
+        color: #0e0e0e;  
+    }    
+    .formulario h1{
+        font-size: 39px;  
+        text-align: letf; 
+        padding-bottom: 20px; 
+        color: #ab4493;
+    }    
+    .formulario h3{
+        font-size: 16px; 
+        padding-bottom: 30px;
+        color: #0e0e0e;   
+    }
+    
+    .formulario p{
+        font-size: 14px; 
+        color: #0e0e0e; 
+        padding-top: 10px;
+    }  
+    ::-webkit-input-placeholder {
+    color: #a8a8a8;
+    }
+        
+    ::-webkit-textarea-placeholder {
+    color: #a8a8a8;
+    }     
+    .formulario input:focus{
+        outline:0;
+        border: 1px solid #97d848;
+    }   
+    .formulario textarea:focus{
+        outline:0;
+        border: 1px solid #97d848;
+    }
+    /*Fin contacto*/
+
+    /*footer*/
+    .footer{
+        background-color: black;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .footer i{
+        font-size: 20px;
+        color: #fff;
+        margin-left: 15px;
+    }
+    .footer p{
+        margin-left: 15px;
+        margin-top: 10px;
+    } 
+}

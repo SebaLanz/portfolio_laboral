@@ -1,7 +1,5 @@
 const nombre = document.querySelector('#nombre');
 const email = document.querySelector('#email');
-const telefono = document.querySelector('#telefono');
-const asunto = document.querySelector('#asunto');
 const mensaje = document.querySelector('#mensaje');
 
 const form_completo = () => {
@@ -11,17 +9,30 @@ const form_completo = () => {
     })
 }
 const error = () => {
-    if (nombre.value == '' || email.value == '' || telefono.value == '' || asunto.value == ''|| mensaje.value == ''){
+    if (nombre.value == '' || email.value == '' || mensaje.value == ''){
+        let nom, em, msj, cantidad = 0, txt = '';
+        if (nombre.value == '') {nom = 'Nombre'; cantidad =  parseInt(cantidad) + 1 ;}else{nom = '';}
+        if (email.value == '') {em = 'Email'; cantidad = parseInt(cantidad) + 1;}else{em = '';}
+        if (mensaje.value == '') {msj = 'Mensaje'; cantidad = parseInt(cantidad) + 1 ;}else{msj = '';}
+        if (cantidad > 1) {
+            txt = `Hay campos vacíos, son ${nom} ${em} ${msj}`;
+            console.log(cantidad + 'hola');
+        }else{
+            txt = `Falta completar el campo: ${nom} ${em} ${msj}`;
+        }
         Swal.fire({
             icon: 'error',
-            text: 'Debe completar los campos vacíos'
+            text: txt
         })
+        return false;
     }else{
-        console.log(`nom: ${nombre.value} -  email: ${email.value} - tel: ${telefono.value} - asunto: ${asunto.value} - mensaje: ${mensaje.value}`);
         form_completo();
     }
 }
 const enviarEmail =  () => {
-    error();
+    if (error() === false) {
+        error();
+        event.preventDefault(); // Evita el envío predeterminado del formulario
+    }
 }
 enviar.addEventListener('click', enviarEmail);

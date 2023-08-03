@@ -557,7 +557,7 @@ color: #a8a8a8;
     .grid-container{
         grid-template: 
         "header  header header" 100px /*Alto*/
-        "main  main   main" auto /*Alto*/
+        "main  main   main"  /*Alto*/
         "footer  footer footer" 100px /*Alto*/ /
         150px    auto   150px; /*Ancho de columnas*/    
         gap: 0 0px; 
@@ -598,6 +598,9 @@ color: #a8a8a8;
     /*Fin Header*/
     
     /*Fin nab - side*/
+    .sidebar, .navbar{
+        display: none;
+    }
     /*Inicio main*/
     .main{
         display: grid;
@@ -668,6 +671,10 @@ color: #a8a8a8;
     .parrafoDiv {
         text-align: justify; /* Justifica el texto */
         padding: 25px;
+    }
+    .contactame button{
+        margin-left: 15%;
+        width: 300px;
     }
     
     /* Fin habilidades */

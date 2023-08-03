@@ -40,10 +40,102 @@ body{
 .footer{
     grid-area: footer;
 }
+/*Contacto*/
+/*Inicio contacto*/
+.contactame{  
+    width: 350px; 
+    height: auto;
+    margin: 50px auto;
+    border-radius: 10px;      
+    background-color: #fbfbfb; 
+    padding: 15px 0 15px 0;
+}    
+input{
+    background-color: #fbfbfb; 
+    width: 408px; 
+    height: 40px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #ab4493; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 10px; 
+}    
+textarea{
+    background-color: #fbfbfb; 
+    width: 405px; 
+    height: 150px; 
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+    border-color: #ab4493; 
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+    padding-top: 15px; 
+}     
+label{
+    display: block; 
+    float: center;  
+} 
+button{
+    height: 45px; 
+    margin-bottom: 20px; 
+    text-transform: uppercase;
+    background-color: #ab4493; 
+    border-color: #ab4493; 
+    border-style: solid; 
+    border-radius: 10px;  
+    width: 420px;   
+    cursor: pointer;
+}     
+button p{
+    color: #fff; 
+}      
+span{
+    color: #ab4493; 
+}     
+.aviso{
+    font-size: 13px;  
+    color: #0e0e0e;  
+}    
+.formulario h1{
+    font-size: 39px;  
+    text-align: letf; 
+    padding-bottom: 20px; 
+    color: #ab4493;
+}    
+.formulario h3{
+    font-size: 16px; 
+    padding-bottom: 30px;
+    color: #0e0e0e;   
+}
 
+.formulario p{
+    font-size: 14px; 
+    color: #0e0e0e; 
+    padding-top: 10px;
+}  
+::-webkit-input-placeholder {
+color: #a8a8a8;
+}
+    
+::-webkit-textarea-placeholder {
+color: #a8a8a8;
+}     
+.formulario input:focus{
+    outline:0;
+    border: 1px solid #97d848;
+}   
+.formulario textarea:focus{
+    outline:0;
+    border: 1px solid #97d848;
+}
+/*Fin contacto*/
 /*medias queries*/
 /*Tablet*/
-@media (min-width: 600px){
+@media (max-width: 500px){
     .grid-container{
         grid-template: 
         "header  header" 100px /*Alto*/
@@ -51,7 +143,407 @@ body{
         "main" auto /*Alto*/
         "footer  footer" 100px /*Alto*/ /
         200px    auto; /*Ancho de columnas*/       
+        
     }
+    .grid-container > *{
+        box-shadow: none;
+    }
+    .header, .main, .footer{
+        border-radius: 0px;
+    }
+
+    /*Header*/
+    .header {
+        background-color: black;
+        color: #fff;
+        display: flex; /* Utilizamos flexbox */
+        align-items: center; /* Centramos verticalmente los elementos */
+        justify-content: end;
+        width: 100vw;
+    }
+    
+    .navbar{
+        width: 0px;
+        height: 0px;
+    }
+    .navItems {
+        display: flex;
+    }
+    
+    .navItems a {
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        transition: 0.7s;
+        margin-left: 10px; /* Espaciado entre enlaces */
+        height: 100%; /* Para asegurar que los enlaces ocupen toda la altura del header */
+        display: flex; /* Para centrar verticalmente el texto */
+        align-items: center; /* Centrar verticalmente el texto */
+    }
+    
+    .navItems a:hover {
+        color: gray;
+        transition: 0.7s;
+    }  
+    /*side*/
+    .sidebar{
+        display: none;
+    } 
+    /*main*/
+    .main{
+        display: grid;
+        grid-template: 
+        "sobreMi"
+        "habilidades"
+        "trabajos"
+        "curriculum"
+        "contactame";
+    }
+    .sobreMi{
+        grid-area: sobreMi;
+        display: grid;
+        grid-template:
+        "parrafoSM" 350px;
+        background-color: #020202;
+        border-radius: 5px;
+        margin-bottom: 50px;
+        width: 100vw;
+    }
+    .contactame{
+        grid-area: contactame;
+    }
+
+    .parrafoSM{
+        background-color: #fff; 
+        padding-top: 25px;
+        display: block;
+    }
+    .parrafoSM h1,h3{
+        color: #ab4493;
+    }
+    .parrafoSM h1{
+        font-size: 50px;
+    }
+    .parrafoSM, h3{
+        font-size: 30px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .parrafoSM, .parrafoHabilidades p{
+        font-size: 20px;
+    }
+    .parrafoSM p{
+        text-align: left;
+    }
+    /* Fin Sobre mí */
+    /* Habilidades */
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        height: 100vh; /* Ajusta aquí la altura deseada para ocupar todo el viewport */
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+    .imgLenguajes{
+        margin: 25px;
+        height: 100px; 
+    }
+    .imgLenguajes img{
+        display: none;
+        
+    }
+
+    .parrafoDiv {
+        text-align: justify; /* Justifica el texto */
+        padding: 25px;
+        margin: 25px;
+        margin-top: 20%;
+    }
+    /*fin habilidades*/
+    .trabajos {
+        width: 100%; /* Puedes ajustar el ancho según tus necesidades */
+        margin: 0 auto; /* Centrar horizontalmente */
+        display: flex;
+        
+    }
+    
+    .card {
+        width: 90%; /* Ocupar todo el ancho disponible */
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 3%;
+        margin-right: 5%;
+    }
+    
+    /* Asegurarse de que las imágenes ocupen todo el espacio disponible en la caja */
+    .imgCard1,
+    .imgCard2,
+    .imgCard3,
+    .imgCard4 {
+        background-position: center;
+        background-size: cover;
+        height: 250px;
+    }
+    
+    /* Agrega las imágenes de fondo como lo tenías */
+    .imgCard1 {
+        background-image: url(../img/php.jpg);
+    }
+    
+    .imgCard2 {
+        background-image: url(../img/htmlcssjs.PNG);
+    }
+    
+    .imgCard3 {
+        background-image: url(../img/mysql.PNG);
+    }
+    
+    .imgCard4 {
+        background-image: url(../img/imgc.PNG);
+    }
+    
+    /* Estilos adicionales para el contenido de las cajas, si es necesario */
+    .card-body {
+        padding: 10px;
+    }
+    /*Fin Cartas*/
+    /*Contactame*/
+    .contactame{
+        width: auto;
+        margin-right: 10%;
+    }
+    /*Fin contacto
+    Inicio Footer*/
+    /*footer*/
+    .footer{
+        background-color: black;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .footer i{
+        font-size: 20px;
+        color: #fff;
+        margin-left: 15px;
+    }
+    .footer p{
+        margin-left: 15px;
+        margin-top: 10px;
+        margin-right: 10px;
+    } 
+}
+
+@media (min-width: 500px) and (max-width: 600px){
+    .grid-container{
+        grid-template: 
+        "header  header" 100px /*Alto*/
+        "navbar  navbar" 50px /*Alto*/
+        "main" auto /*Alto*/
+        "footer  footer" 100px /*Alto*/ /
+        200px    auto; /*Ancho de columnas*/       
+        
+    }
+    .grid-container > *{
+        box-shadow: none;
+    }
+    .header, .main, .footer{
+        border-radius: 0px;
+    }
+
+    /*Header*/
+    .header {
+        background-color: black;
+        color: #fff;
+        display: flex; /* Utilizamos flexbox */
+        align-items: center; /* Centramos verticalmente los elementos */
+        justify-content: end;
+        width: 100vw;
+    }
+    
+    .navbar{
+        width: 0px;
+        height: 0px;
+    }
+    .navItems {
+        display: flex;
+    }
+    
+    .navItems a {
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        transition: 0.7s;
+        margin-left: 10px; /* Espaciado entre enlaces */
+        height: 100%; /* Para asegurar que los enlaces ocupen toda la altura del header */
+        display: flex; /* Para centrar verticalmente el texto */
+        align-items: center; /* Centrar verticalmente el texto */
+    }
+    
+    .navItems a:hover {
+        color: gray;
+        transition: 0.7s;
+    }  
+    /*side*/
+    .sidebar{
+        display: none;
+    } 
+    /*main*/
+    .main{
+        display: grid;
+        grid-template: 
+        "sobreMi"
+        "habilidades"
+        "trabajos"
+        "curriculum"
+        "contactame";
+    }
+    .sobreMi{
+        grid-area: sobreMi;
+        display: grid;
+        grid-template:
+        "parrafoSM" 350px;
+        background-color: #020202;
+        border-radius: 5px;
+        margin-bottom: 50px;
+        width: 100vw;
+    }
+    .contactame{
+        grid-area: contactame;
+    }
+
+    .parrafoSM{
+        background-color: #fff; 
+        padding-top: 25px;
+        display: block;
+    }
+    .parrafoSM h1,h3{
+        color: #ab4493;
+    }
+    .parrafoSM h1{
+        font-size: 50px;
+    }
+    .parrafoSM, h3{
+        font-size: 30px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .parrafoSM, .parrafoHabilidades p{
+        font-size: 20px;
+    }
+    .parrafoSM p{
+        text-align: left;
+    }
+    /* Fin Sobre mí */
+    /* Habilidades */
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        height: 100vh; /* Ajusta aquí la altura deseada para ocupar todo el viewport */
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto 1fr;
+    }
+    .imgLenguajes{
+        margin: 25px;
+        height: 100px; 
+    }
+    .imgLenguajes img{
+        display: none;
+        
+    }
+
+    .parrafoDiv {
+        text-align: justify; /* Justifica el texto */
+        padding: 25px;
+        margin: 25px;
+    }
+    /*fin habilidades*/
+    .trabajos {
+        width: 100%; /* Puedes ajustar el ancho según tus necesidades */
+        margin: 0 auto; /* Centrar horizontalmente */
+        display: flex;
+        
+    }
+    
+    .card {
+        width: 90%; /* Ocupar todo el ancho disponible */
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 3%;
+        margin-right: 5%;
+    }
+    
+    /* Asegurarse de que las imágenes ocupen todo el espacio disponible en la caja */
+    .imgCard1,
+    .imgCard2,
+    .imgCard3,
+    .imgCard4 {
+        background-position: center;
+        background-size: cover;
+        height: 250px;
+    }
+    
+    /* Agrega las imágenes de fondo como lo tenías */
+    .imgCard1 {
+        background-image: url(../img/php.jpg);
+    }
+    
+    .imgCard2 {
+        background-image: url(../img/htmlcssjs.PNG);
+    }
+    
+    .imgCard3 {
+        background-image: url(../img/mysql.PNG);
+    }
+    
+    .imgCard4 {
+        background-image: url(../img/imgc.PNG);
+    }
+    
+    /* Estilos adicionales para el contenido de las cajas, si es necesario */
+    .card-body {
+        padding: 10px;
+    }
+    /*Fin Cartas*/
+    /*Contactame*/
+    .contactame{
+        width: auto;
+        margin-right: 10%;
+        margin-left: 6%
+    }
+    /*Fin contacto
+    Inicio Footer*/
+    /*footer*/
+    .footer{
+        background-color: black;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .footer i{
+        font-size: 20px;
+        color: #fff;
+        margin-left: 15px;
+    }
+    .footer p{
+        margin-left: 15px;
+        margin-top: 10px;
+    } 
 }
 /*PC*/
 
@@ -173,7 +665,7 @@ body{
     }
     
     /* Fin habilidades */
-    /* Inicio Trabajos */
+    
 /* Inicio Trabajos */
 /* Trabajos */
 .trabajos-grid {

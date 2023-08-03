@@ -135,7 +135,7 @@ color: #a8a8a8;
 /*Fin contacto*/
 /*medias queries*/
 /*Tablet*/
-@media (max-width: 500px){
+@media (max-width: 589px){
     .grid-container{
         grid-template: 
         "header  header" 100px /*Alto*/
@@ -347,7 +347,7 @@ color: #a8a8a8;
     
 }
 
-@media (min-width: 500px) and (max-width: 600px){
+@media (min-width: 590px) and (max-width: 600px){
     .grid-container{
         grid-template: 
         "header  header" 100px /*Alto*/

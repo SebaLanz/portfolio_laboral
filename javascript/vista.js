@@ -36,3 +36,14 @@ const enviarEmail =  () => {
     }
 }
 enviar.addEventListener('click', enviarEmail);
+document.addEventListener("DOMContentLoaded", function() {
+    const scrollButton = document.getElementById("scrollButton");
+
+    scrollButton.addEventListener("click", () => {
+        // Desplazamiento suave hacia arriba
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
